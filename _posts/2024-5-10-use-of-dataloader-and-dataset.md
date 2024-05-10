@@ -8,7 +8,7 @@ tags: [machine learning, deep learning, data processing, python, pytorch, datalo
 
 为了提高代码的可读性与模块化特性，我们希望数据集代码与模型训练代码分离。于是 PyTorch 提供了两个原始类型（Data Primitive）：`torch.utils.data.DataLoader` 与 `torch.utils.data.Dataset`，分别用于定义数据集对象、迭代读取数据条目。
 
-下面将先介绍如何快速上手，之后对两个原始类型的参数进一步解释。
+下面将先介绍如何快速上手，之后对两个原始类型的参数作详细解释。
 
 ## 快速上手
 
