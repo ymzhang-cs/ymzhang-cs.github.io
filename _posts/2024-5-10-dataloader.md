@@ -38,9 +38,11 @@ class MyDataset(Dataset):
     def __len__(self):
         return self.num_sample
 ```
-{: file="dataloader/dataloader.py" }
+{: file="dataloader/dataset.py" }
 
 ### 导入类
+
+导入 `Dataset` 子类与 `DataLoader`。
 
 ``` python
 from dataloader.dataset import MyDataset as Dataset
@@ -104,12 +106,14 @@ for i, (source, target) in enumerate(dataloader):
     print(f'Target: {target}')
     print()
 ```
+{: file="test.py" }
 
 处理得到的原始 `batch` 值形如：
 
 ```python
 [(1, 1), (2, 2), (3, 3)]
 ```
+{: file="terminal" }
 
 因为没有指定 `collate_fn`，控制台的输出内容是默认函数处理的结果。
 
@@ -122,6 +126,7 @@ Batch 2:
 Source: tensor([4, 5])
 Target: tensor([4, 5])
 ```
+{: file="terminal" }
 
 #### 创建 collate_fn 函数
 
@@ -139,6 +144,7 @@ class MyDataset(Dataset):
         # Your code here
         return ...
 ```
+{: file="dataloader/dataset.py" }
 
 如果希望在未指定 `collate_fn` 时的默认结果基础上处理，可以通过下面的函数实现。
 
@@ -148,8 +154,12 @@ class MyDataset(Dataset):
         source, target = zip(*batch)
         source = np.stack(source)
         target = np.stack(target)
+        
+        # Your code here
+
         return source, target
 ```
+{: file="dataloader/dataset.py" }
 
 ## 介绍
 
