@@ -6,7 +6,7 @@ categories: [Machine Learning, PyTorch]
 tags: [machine learning, deep learning, data processing, python, pytorch, dataloader, dataset]
 ---
 
-为了提高代码的可读性与模块化特性，我们希望数据集代码与模型训练代码分离。于是 PyTorch 提供了两个原始类型[^primitive]：`torch.utils.data.DataLoader` 与 `torch.utils.data.Dataset`，分别用于定义数据集对象、迭代读取数据条目。
+为了提高代码的可读性与模块化特性，我们希望数据集代码与模型训练代码分离。于是 PyTorch 提供了两个原始类型（Data Primitive）：`torch.utils.data.DataLoader` 与 `torch.utils.data.Dataset`，分别用于定义数据集对象、迭代读取数据条目。
 
 下面将先介绍如何快速上手，之后对两个原始类型的参数作详细解释。
 
@@ -17,7 +17,7 @@ tags: [machine learning, deep learning, data processing, python, pytorch, datalo
 > Dataset 是抽象基类，需要以它为基类编写子类，接着将子类实例化。
 {: .prompt-tip}
 
-根据实际的数据形式编写代码。下面是一个示例：
+这部分代码需要根据实际的数据形式进行调整。下面只是一个简单的示例：
 
 ```python
 from torch.utils.data import Dataset
@@ -42,7 +42,7 @@ class MyDataset(Dataset):
 
 ### 导入类
 
-导入 `Dataset` 子类与 `DataLoader`。
+导入刚刚写的 `Dataset` 子类与 `DataLoader`。
 
 ``` python
 from dataloader.dataset import MyDataset as Dataset
@@ -63,14 +63,14 @@ train_dataset = Dataset(source_arr, target_arr)
 
 ### 实例化 DataLoader 对象
 
-在主程序中调用 `DataLoader` 类，并传入 `Dataset` 对象进行实例化。
+在主程序中调用 `DataLoader` 类进行实例化，并传入 `Dataset` 对象。
 
 ```python
 train_dataloader = DataLoader(train_dataset, arg1, arg2, ...)
 ```
 {: file="main.py" }
 
-不过更推荐的是提前将参数打包成字典，在调用类时进行解包：
+与其在创建对象的时候填写参数，更推荐的是提前将参数打包成字典，在创建对象时进行解包：
 
 ```python
 dataloader_args = {"batch_size": 256, "shuffle": True, "num_workers": 8}
@@ -86,7 +86,9 @@ for sample in train_dataloader:
 ```
 {: file="main.py" }
 
-`DataLoader` 的迭代返回值形式取决于 `collate_fn` 参数。如果 `collate_fn == None`，则对原始 `batch` 值使用默认函数进行处理并返回。否则，将原始 `batch` 值使用 `collate_fn` 指定的函数进行处理。
+`DataLoader` 的迭代返回值取决于 `collate_fn` 参数。
+
+如果 `collate_fn == None`，则对原始 `batch` 值使用默认函数进行处理并返回。否则，将原始 `batch` 值使用 `collate_fn` 指定的函数进行处理并返回。
 
 具体来看，对于下面的最小测试单元：
 
@@ -204,7 +206,3 @@ class MyDataset(Dataset):
 [1] PyTorch - torch.utils.data. [Link](https://pytorch.org/docs/stable/data.html#torch.utils.data.Dataset).
 
 [2] PyTorch - Datasets & DataLoaders. [Link](https://pytorch.org/tutorials/beginner/basics/data_tutorial.html).
-
-## 注释
-
-[^primitive]: 原文称“primitive”
