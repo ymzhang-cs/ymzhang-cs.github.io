@@ -35,4 +35,4 @@ order: 4
 
 ## 联系我
 
-可以通过我的 Github 主页 [ymzhang-cs](http://github.com/ymzhang-cs) 上的电子邮件与我联系。
+可以通过我的 Github 主页 [ymzhang-cs](https://github.com/ymzhang-cs) 上的电子邮件与我联系。
