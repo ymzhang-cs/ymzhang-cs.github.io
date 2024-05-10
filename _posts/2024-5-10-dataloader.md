@@ -1,5 +1,5 @@
 ---
-title: 理解PyTorch中DataLoader与Dataset的使用
+title: 理解 PyTorch 中 DataLoader 与 Dataset 的使用
 author: me
 date: 2024-05-10 22:00:00 +0800
 categories: [Machine Learning, PyTorch]
@@ -154,7 +154,7 @@ class MyDataset(Dataset):
         source, target = zip(*batch)
         source = np.stack(source)
         target = np.stack(target)
-        
+
         # Your code here
 
         return source, target
