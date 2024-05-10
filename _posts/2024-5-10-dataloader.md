@@ -14,7 +14,7 @@ tags: [machine learning, deep learning, data processing, python, pytorch, datalo
 
 ### 实现 Dataset 子类
 
-> Dataset 是抽象基类，需要以它为基类编写子类，接着将子类实例化。
+> `Dataset` 是抽象基类，需要以它为基类编写子类，接着将子类实例化。
 {: .prompt-tip}
 
 这部分代码需要根据实际的数据形式进行调整。下面只是一个简单的示例：
@@ -88,7 +88,7 @@ for sample in train_dataloader:
 
 `DataLoader` 的迭代返回值取决于 `collate_fn` 参数。
 
-如果 `collate_fn == None`，则对原始 `batch` 值使用默认函数进行处理并返回。否则，将原始 `batch` 值使用 `collate_fn` 指定的函数进行处理并返回。
+如果 `collate_fn == None`，则对原始 batch 值使用默认函数进行处理并返回。否则，将原始 batch 值使用 `collate_fn` 指定的函数进行处理并返回。
 
 具体来看，对于下面的最小测试单元：
 
@@ -110,7 +110,7 @@ for i, (source, target) in enumerate(dataloader):
 ```
 {: file="test.py" }
 
-处理得到的原始 `batch` 值形如：
+处理得到的原始 batch 值形如：
 
 ```python
 [(1, 1), (2, 2), (3, 3)]
@@ -132,7 +132,7 @@ Target: tensor([4, 5])
 
 #### 创建 collate_fn 函数
 
-如果希望对数据进行进一步处理，可以创建一个 `collate_fn()` 函数，这样迭代返回值就是原始 `batch` 值经过这个函数处理后的内容。
+如果希望对数据进行进一步处理，可以创建一个 `collate_fn()` 函数，这样迭代返回值就是原始 batch 值经过这个函数处理后的内容。
 
 > 一般将这个函数写在 `MyDataset` 类里，并使用 `@staticmethod` 装饰器。
 {: .prompt-tip}
@@ -182,11 +182,11 @@ class MyDataset(Dataset):
 2. **batch_size** (*int, optional*): 每个 batch 有多少个样本。默认为 `1`。
 3. **shuffle** (*bool, optional*): 在每个 epoch 对数据重新排序。默认为 `False`。
 4. **sampler** (*Sampler or Iterable, optional*): 自定义抽取样本的策略。与 `shuffle` 互斥。
-5. **batch_sampler** (*Sampler or Iterable, optional*): 类似于 sampler，但一次返回一批索引。与 `batch_size`, `shuffle`, `sampler`, `drop_last`等参数互斥。
+5. **batch_sampler** (*Sampler or Iterable, optional*): 类似于 `sampler`，但一次返回一批索引。与 `batch_size`, `shuffle`, `sampler`, `drop_last`等参数互斥。
 6. **num_workers** (*int, optional*): 用于数据加载的子进程（worker）数。设置为 `0` 表示数据将在主进程中加载，大于 `0` 表示使用多个子进程加载数据。默认为 `0`。
 7. **collate_fn** (*Callable, optional*): 这个函数合并一个 `list` 类型样本来形成一个 `mini-batch`。
-8. **pin_memory** (*bool, optional*): 如果为 True，将在返回 Tensors 之前将其复制到设备/CUDA 固定内存中。
-9. **drop_last** (*bool, optional*): 设置为 True 会丢弃最后一个不完整的批次。默认为 `False`。
+8. **pin_memory** (*bool, optional*): 如果为 `True`，将在返回 Tensors 之前将其复制到设备/CUDA 固定内存中。
+9. **drop_last** (*bool, optional*): 设置为 `True` 会丢弃最后一个不完整的批次。默认为 `False`。
 10. **timeout** (*numeric, optional*): 从工作进程收集批次的超时值。默认为 `0`。
 11. **worker_init_fn** (*Callable, optional*): 每个 worker 初始化的函数，一般不需要自己设置。默认为 `None`。
 12. **multiprocessing_context** (*str or multiprocessing.context.BaseContext, optional*): 多进程上下文，一般使用操作系统的默认上下文即可。
