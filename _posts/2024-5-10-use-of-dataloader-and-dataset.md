@@ -55,8 +55,6 @@ from torch.utils.data import DataLoader
 在主程序中，调用已经实现的 `Dataset` 子类来将其实例化。
 
 ```python
-from dataloader import MyDataset as Dataset
-
 train_dataset = Dataset(source_arr, target_arr)
 ```
 {: file="main.py" }
@@ -70,7 +68,7 @@ train_dataloader = DataLoader(train_dataset, arg1, arg2, ...)
 ```
 {: file="main.py" }
 
-与其在创建对象的时候填写参数，更推荐的是提前将参数打包成字典，在创建对象时进行解包：
+与其在创建 `DataLoader` 对象的时候填写参数，更推荐的是提前将参数打包成字典，在创建对象时进行解包：
 
 ```python
 dataloader_args = {"batch_size": 256, "shuffle": True, "num_workers": 8}
