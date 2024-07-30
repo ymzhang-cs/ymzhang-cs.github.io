@@ -744,7 +744,7 @@ $$
 
 LeNet-5是由Yann LeCun等人于1998年提出的，用于手写数字识别。其结构如下：
 
-![lenet-min](E:\CodeSpace\Learning-Notes\Deep Learning\lenet-min.PNG)
+![lenet-min](../assets/img/deep-learning-note-caolvchong_assets/lenet-min.PNG)
 
 1. **输入层**：32x32的灰度图像
 2. **卷积层1**：6个5x5卷积核，输出尺寸28x28x6
@@ -772,7 +772,7 @@ LeNet-5是由Yann LeCun等人于1998年提出的，用于手写数字识别。�
 
 AlexNet由Alex Krizhevsky等人于2012年提出，在ILSVRC 2012竞赛中取得了巨大成功。其结构如下：
 
-![](E:\CodeSpace\Learning-Notes\Deep Learning\Comparison_image_neural_networks.svg)
+![](../assets/img/deep-learning-note-caolvchong_assets/Comparison_image_neural_networks.svg)
 
 1. **输入层**：227x227x3的彩色图像
 2. **卷积层1**：96个11x11卷积核，步长为4，输出尺寸55x55x96
@@ -805,7 +805,7 @@ AlexNet由Alex Krizhevsky等人于2012年提出，在ILSVRC 2012竞赛中取得�
 
 VGGNet由Simonyan和Zisserman于2014年提出，以其简单统一的结构而闻名。以VGG-16为例，其结构如下：
 
-![vgg16](E:\CodeSpace\Learning-Notes\Deep Learning\vgg16-1.png)
+![vgg16](../assets/img/deep-learning-note-caolvchong_assets/vgg16-1.png)
 
 1. **输入层**：224x224x3的彩色图像
 2. **卷积层1**：64个3x3卷积核，输出尺寸224x224x64
@@ -848,7 +848,7 @@ VGGNet由Simonyan和Zisserman于2014年提出，以其简单统一的结构而�
 
 ResNet由He等人于2015年提出，以其残差连接（skip connections）而著名。以ResNet-50为例，其结构如下：
 
-![resnet architectures 34, 50, 101](E:\CodeSpace\Learning-Notes\Deep Learning\resnet-architectures-34-101.png)
+![resnet architectures 34, 50, 101](../assets/img/deep-learning-note-caolvchong_assets/resnet-architectures-34-101.png)
 
 1. **输入层**：224x224x3的彩色图像
 2. **卷积层1**：7x7卷积核，步长为2，输出尺寸112x112x64
@@ -873,7 +873,7 @@ ResNet由He等人于2015年提出，以其残差连接（skip connections）而�
 
 - **残差连接**：解决了深层网络的梯度消失问题，使得训练更深层网络成为可能。
 
-![resnet-skip](E:\CodeSpace\Learning-Notes\Deep Learning\resnet-skip.png)
+![resnet-skip](../assets/img/deep-learning-note-caolvchong_assets/resnet-skip.png)
 
 - **性能卓越**：在多个图像分类和检测任务中取得了领先的成绩。
 - **模型可扩展性强**：可以方便地扩展到更深的网络，如ResNet-101和ResNet-152。
@@ -889,7 +889,7 @@ ResNet由He等人于2015年提出，以其残差连接（skip connections）而�
 
 ###### 残差块（Residual Block）
 
-![residual-block](E:\CodeSpace\Learning-Notes\Deep Learning\residual-block.svg)
+![residual-block](../assets/img/deep-learning-note-caolvchong_assets/residual-block.svg)
 
 残差块是ResNet的基本构建单元，包含一个或多个卷积层和一个直接的短路连接。具体来说，残差块的输出是输入的恒等映射与卷积层输出的相加。
 
