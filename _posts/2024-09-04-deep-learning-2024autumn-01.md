@@ -92,6 +92,7 @@ $$
 #### 交叉熵（Cross Entropy）损失函数
 
 交叉熵是按照概率分布α的最优编码对真实分布为p的信息进行编码的长度
+
 $$
 \begin{aligned}
 H(p,q) &= \mathbb{E}_p[-\log q(x)] \\
@@ -103,17 +104,23 @@ $$
 - 如果 q 和 p 差别越大，交叉熵就越大
 
 **逻辑回归使用交叉作为损失函数**
+
 $$
 H(p,q) = -\sum_{x} p(x) \log q(x)
 $$
+
 对于训练样本 $$(x^{(n)}, y^{(n)})$$：
+
 $$
 p_r(y^{(n)}=1|x^{(n)})=y^{(n)}, p_r(y^{(n)}=0|x^{(n)})=1-y^{(n)}
 $$
+
 真实概率和预测概率之间的交叉熵为：
+
 $$
 H(p,q) = -[p_r(y^{(n)}=1|x^{(n)})\log \hat y^{(n)}+p_r(y^{(n)}=0|x^{(n)})\log (1-\hat y^{(n)})
 $$
+
 其中 $$\hat{y}^{(n)} = \sigma(w^\top x^{(n)})$$
 
 ### Softmax 回归
@@ -121,6 +128,7 @@ $$
 Softmax Regression，也称为多项（Multinomial）或多类(Multi-Class）的Logistic 回归，是Logistic 回归在多分类问题上的推广。
 
 Softmax 回归中，首先还是利用线性函数作特征的映射（判别函数），然后利用Softmax 函数作为非线性的决策函数
+
 $$
 \begin{aligned}
 p(y=c|x)&=\mathrm{softmax}(w_c^\top x) \\
