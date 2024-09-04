@@ -7,6 +7,8 @@ tags: [machine learning, deep learning, python]
 math: true
 ---
 
+_这份笔记使用的部分图片、内容来自于北京交通大学深度学习课程，版权归课题组和原作者所有。_
+
 ## 1. 开源框架概述
 
 图像识别任务：根据图像矩阵输入给出类别
@@ -149,9 +151,13 @@ torch.autograd 是为了方便用户使用，专门开发的一套自动求导�
 autograd 包就是用来自动求导的，可以为张量上的所有操作提供自动求导机制，而 **torch.Tensor** 和 **torch.Function** 为 autograd 上的两个核心类，他们相互连接并生成一个有向非循环图。
 
 > 在创建torch.Tensor时，如果属性.require_grad为True，它将会追踪对于该张量的所有操作。
-> 可以通过用torch.no_grad0包裹代码块来阻止autograd去跟踪那些标记为.requesgrad=True的张量的历史记录
+> 
+> 可以通过用torch.no_grad0包裹代码块来阻止autograd去跟踪那些标记为.requesgrad=True的张量的历史记录。
+> 
 > 当通过调用.backward0来自动计算所有的梯度，这个张量所有梯度将会自动累加到.grad属性。
+> 
 > backward(函数接受参数，该参数应和调用backwardO函数的Tensor的维度相同，或者是可broadcast的维度。
+> 
 > 如果求导的tensor为标量（即一个数字），backward中参数可省略。
 {: .prompt-tip}
 
@@ -167,7 +173,9 @@ torch.nn的核心数据结构是Module，它是一个抽象的概念，**既可�
 - 主Module能够递归查找子Module中的parameter。
 
 > 为了方便用户使用，PyTorch实现了神经网络中绝大多数的layer，这些layer都继承于nn.Module，封装了可学习参数parameter，并实现了forward函数。
+> 
 > 且专门针对GPU运算进行了CuDNN优化，其速度和性能都十分优异
+> 
 > https://pytorch.org/docs/stable/nn.html
 {: .prompt-tip}
 
@@ -200,8 +208,11 @@ tensor([[True, True, True, True], [True, True, True, True]])
 ```
 
 > 如果模型有可学习的参数时，最好使用nn.Module
+> 
 > 激活函数（ReLU、sigmoid、Tanh）、池化（MaxPool）等层没有可学习的参数可以使用对应的functional函数
+> 
 > 卷积、全连接等有可学习参数的网络建议使用nn.Module
+> 
 > dropout没有可学习参数，建议使用 nn.Dropout 而不是 **nn.functional.dropout**，方便测试集运行
 {: .prompt-warning}
 

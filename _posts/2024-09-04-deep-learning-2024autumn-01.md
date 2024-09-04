@@ -7,6 +7,8 @@ tags: [machine learning, deep learning, python]
 math: true
 ---
 
+_这份笔记使用的部分图片、内容来自于北京交通大学深度学习课程，版权归课题组和原作者所有。_
+
 ## 机器学习基础概念
 
 1. 机器学习算法分类
