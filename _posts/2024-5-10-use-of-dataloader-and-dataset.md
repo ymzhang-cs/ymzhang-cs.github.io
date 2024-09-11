@@ -32,7 +32,7 @@ class MyDataset(Dataset):
         self.target_arr = target_arr
         self.num_sample = num_sample
 
-    def __getitem(self, idx):
+    def __getitem__(self, idx):
         return self.source_arr[idx], self.source_arr[idx]
     
     def __len__(self):
