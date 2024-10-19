@@ -15,8 +15,10 @@ tags: [BJTU, Homework]
 
 ## 作业提交
 
-[1-提示工程在生成式人工智能中的发展现状及趋势分析.docx](../assets/files/intro-course-hw/1-提示工程在生成式人工智能中的发展现状及趋势分析.docx)
+[1-提示工程在生成式人工智能中的发展现状及趋势分析.docx](https://raw.githubusercontent.com/ymzhang-cs/ymzhang-cs.github.io/refs/heads/main/assets/files/intro-course-hw/1-提示工程在生成式人工智能中的发展现状及趋势分析.docx)
 
-[2-提示工程.pptx](../assets/files/intro-course-hw/2-提示工程.pptx)
+[2-提示工程.pptx](https://raw.githubusercontent.com/ymzhang-cs/ymzhang-cs.github.io/refs/heads/main/assets/files/intro-course-hw/2-提示工程.pptx)
 
-[3-徐州降水量分析.xlsx](../assets/files/intro-course-hw/3-徐州降水量分析.xlsx)
+[3-徐州降水量分析.xlsx](https://raw.githubusercontent.com/ymzhang-cs/ymzhang-cs.github.io/refs/heads/main/assets/files/intro-course-hw/3-徐州降水量分析.xlsx)
+
+[4-个人网页](https://ymzhang-cs.github.io/)
