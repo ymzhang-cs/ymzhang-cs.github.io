@@ -2,8 +2,8 @@
 title: 深度学习课程笔记（三）：前馈神经网络
 author: me
 date: 2024-09-04 23:20:00 +0800
-categories: [Machine Learning, Basic]
-tags: [machine learning, deep learning, python]
+categories: [Deep Learning, Basic]
+tags: [Deep Learning, Python]
 math: true
 ---
 

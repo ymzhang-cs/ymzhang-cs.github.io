@@ -2,8 +2,8 @@
 title: 理解 PyTorch 中 DataLoader 与 Dataset 的使用
 author: me
 date: 2024-05-10 22:00:00 +0800
-categories: [Machine Learning, PyTorch]
-tags: [machine learning, deep learning, data processing, python, pytorch, dataloader, dataset]
+categories: [Deep Learning, PyTorch]
+tags: [Deep learning, Data Processing, Python, PyTorch, DataLoader, Dataset]
 ---
 
 为了提高代码的可读性与模块化特性，我们希望数据集代码与模型训练代码分离。于是 PyTorch 提供了两个原始类型（Data Primitive）：`torch.utils.data.DataLoader` 与 `torch.utils.data.Dataset`，分别用于定义数据集对象、迭代读取数据条目。

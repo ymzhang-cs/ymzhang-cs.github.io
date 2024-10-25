@@ -2,8 +2,8 @@
 title: 深度学习笔记：“草履虫都能看懂”教程
 author: me
 date: 2024-07-31 00:00:00 +0800
-categories: [Machine Learning, Basic]
-tags: [machine learning, deep learning, python]
+categories: [Deep Learning, Basic]
+tags: [Deep Learning, Python]
 math: true
 ---
 

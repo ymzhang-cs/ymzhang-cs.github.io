@@ -2,8 +2,8 @@
 title: 深度学习课程笔记（二）：PyTorch入门
 author: me
 date: 2024-09-04 23:10:00 +0800
-categories: [Machine Learning, Basic]
-tags: [machine learning, deep learning, python]
+categories: [Deep Learning, Basic]
+tags: [Deep learning, Python, PyTorch]
 math: true
 ---
 
