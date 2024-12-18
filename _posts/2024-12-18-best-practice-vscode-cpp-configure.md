@@ -37,6 +37,7 @@ MSYS 2 提供了一个构建环境，允许用户使用 `pacman` 命令在 Windo
 >VS Code 的 IntelliSense 提供了代码补全功能。一般会自动识别编译器路径，但**建议检查一下是否正确**。
 >
 >如果 IntelliSense 使用的是 Visual Studio 的 MSVC，可能导致 `bits/stdc++.h` 等头文件无法使用的问题。
+{: .prompt-info}
 
 由于 VS Code 对各个语言的 IntelliSense 支持是基于插件的，所以首先需要安装 C/C++ 拓展。
 
@@ -53,6 +54,7 @@ MSYS 2 提供了一个构建环境，允许用户使用 `pacman` 命令在 Windo
 ## 4. 配置 tasks.json 添加编译和调试配置
 
 > 这一步可以偷懒：只需要安装 CodeRunner 插件，就不用进行 tasks 配置了。
+{: .prompt-tip}
 
 二选一：
 1. 点击 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>，输入 `tasks`，找到 `任务：配置任务` / `Tasks: Configure Task`，选中回车。
@@ -66,6 +68,12 @@ MSYS 2 提供了一个构建环境，允许用户使用 `pacman` 命令在 Windo
 
 任意打开一个 C/C++ 文件，就可以开心运行啦~
 
+## 5. 关于如何在 BJTU 机房配置环境
+
+逸夫机房的电脑提供了 MinGW 环境，但是没有配置好 VS Code 的 C/C++ 环境，导致默认使用的是 MSVC 的 IntelliSense，无法使用 `bits/stdc++.h` 等头文件。
+
+MinGW 环境的路径在 Dev C++ 的安装目录下，可以找到路径后手动进行 IntelliSense 和 tasks.json 的配置。
+
 ## 参考
 
-https://code.visualstudio.com/docs/languages/cpp
+[https://code.visualstudio.com/docs/languages/cpp](https://code.visualstudio.com/docs/languages/cpp)
