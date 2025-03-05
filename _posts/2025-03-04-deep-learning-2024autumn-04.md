@@ -1,5 +1,5 @@
 ---
-title: 深度学习课程笔记（四）：前馈神经网络
+title: 深度学习课程笔记（四）：模型优化与正则化
 author: me
 date: 2025-03-04 22:10:00 +0800
 categories: [Deep Learning, Basic]
